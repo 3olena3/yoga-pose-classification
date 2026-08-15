@@ -41,8 +41,3 @@
 
 ---
 
-## 🚀 Як запустити проєкт
-
-1. Клонуйте репозиторій:
-   ```bash
-   git clone [https://github.com/3olena3/yoga-pose-classification.git](https://github.com/3olena3/yoga-pose-classification.git)
