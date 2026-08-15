@@ -1,2 +1,48 @@
-# yoga-pose-classification
-CNN and Transfer Learning multi-class image classification model for yoga poses identification using TensorFlow &amp; Keras.
+# 🧘‍♀️ Yoga Pose Classification using CNN & TensorFlow
+
+Цей проєкт присвячений класифікації поз йоги за зображеннями з використанням глибокого навчання (Deep Learning) та бібліотеки TensorFlow / Keras.
+
+---
+
+## 📌 Огляд проєкту
+
+Модель класифікує зображення поз йоги на кілька категорій (Multi-class Classification). Проєкт охоплює повний цикл розробки: від завантаження та попередньої обробки даних до тренування моделі, інференсу на власних зображеннях та детального оцінювання якості.
+
+---
+
+## 🛠 Використані технології та бібліотеки
+
+* **Мова програмування:** Python 3.12
+* **Глибоке навчання:** TensorFlow, Keras
+* **Обробка та візуалізація даних:** NumPy, Matplotlib, PIL
+* **Метрики та оцінка якості:** Scikit-learn (`f1_score`, `classification_report`)
+* **Середовище розробки:** Google Colab
+
+---
+
+## ⚙️ Основні етапи реалізації
+
+1. **Попередня обробка даних (Data Preprocessing & Augmentation):**
+   * Використання `ImageDataGenerator` для масштабування пікселів (`rescale=1./255`).
+   * Розподіл датасету на навчальну (80%) та валідаційну (20%) вибірки (`validation_split=0.2`).
+   * Приведення зображень до єдиного розміру $150 \times 150$ px.
+
+2. **Навчання моделі (Model Training):**
+   * Оптимізація навчання з розрахунком `steps_per_epoch` та `validation_steps` на основі розміру батчу (batch size = 32).
+   * Компіляція з мультикласовою функцією втрат (`categorical_crossentropy`).
+
+3. **Інференс та інтерактивна перевірка:**
+   * Завантаження власних зображень через `google.colab.files`.
+   * Візуалізація результатів із виведенням передбаченого класу та рівня впевненості (Confidence Score %).
+
+4. **Оцінка якості (Model Evaluation):**
+   * Точне співставлення прогнозованих та реальних міток без перемешування валідаційної вибірки (`shuffle = False`).
+   * Розрахунок взваженого **F1-Score** та генерація детального `classification_report`.
+
+---
+
+## 🚀 Як запустити проєкт
+
+1. Клонуйте репозиторій:
+   ```bash
+   git clone [https://github.com/3olena3/yoga-pose-classification.git](https://github.com/3olena3/yoga-pose-classification.git)
